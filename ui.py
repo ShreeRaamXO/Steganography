@@ -16,7 +16,7 @@ def embed():
         return "No file uploaded!", 400
     image = request.files['image']
     data = request.form['data']
-    output_path = os.path.join(UPLOAD_FOLDER, 'encoded_image.png')
+    output_path = os.path.join(UPLOAD_FOLDER, 'encoded.png')
     input_path = os.path.join(UPLOAD_FOLDER, image.filename)
     image.save(input_path)
     encode_image(input_path, data, output_path)

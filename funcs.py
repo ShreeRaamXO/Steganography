@@ -11,6 +11,7 @@ def encode_image(input_image_path, secret_data, output_image_path):
 
     # Check if the data fits into the image
     max_capacity = width * height * 3  # Each pixel has 3 color channels
+    
     if len(binary_data) > max_capacity:
         raise ValueError("Data is too large to encode in the image!")
 
@@ -29,7 +30,7 @@ def encode_image(input_image_path, secret_data, output_image_path):
 
     # Save the modified image
     encoded_img.save(output_image_path)
-    print(f"Data encoded successfully into {output_image_path}")
+    # print(f"encoded the img {output_image_path}")
 
 
 def decode_image(input_image_path):
