@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Steganography Tool ❤️ </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg">
+        <h1 class="text-3xl font-bold text-center text-gray-800">Steganography Tool</h1>
+        <p class="text-center text-gray-500">with ❤️ by Sriram</p>
+
+        <!-- Initial Upload Section -->
+        <div id="uploadSection" class="space-y-4">
+            <input 
+                type="file" 
+                id="imageUpload" 
+                accept="image/png"
+                class="hidden"
+            >
+            <button 
+                onclick="document.getElementById('imageUpload').click();"
+                class="w-full py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+                Upload Image
+            </button>
+        </div>
+
+        <!-- Action Selection Section -->
+        <div id="actionSection" class="hidden space-y-4">
+            <div class="flex space-x-4">
+                <button 
+                    id="embedBtn" 
+                    class="w-1/2 py-3 text-white bg-green-600 rounded-lg hover:bg-green-700 transition duration-300"
+                >
+                    Embed Data
+                </button>
+                <button 
+                    id="extractBtn" 
+                    class="w-1/2 py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition duration-300"
+                >
+                    Extract Data
+                </button>
+            </div>
+
+            <!-- Embed Form -->
+            <div id="embedForm" class="hidden space-y-4">
+                <input 
+                    type="text" 
+                    id="dataToEmbed" 
+                    placeholder="Enter secret data"
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                <button 
+                    onclick="embedData()"
+                    class="w-full py-3 text-white bg-green-600 rounded-lg hover:bg-green-700 transition duration-300"
+                >
+                    Hide Data in Image
+                </button>
+            </div>
+
+            <!-- Extract Form -->
+            <div id="extractForm" class="hidden space-y-4">
+                <button 
+                    onclick="extractData()"
+                    class="w-full py-3 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition duration-300"
+                >
+                    Reveal Hidden Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Display -->
+        <div id="resultSection" class="hidden text-center">
+            <p id="resultText" class="text-lg font-semibold text-gray-800"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
