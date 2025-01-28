@@ -99,12 +99,13 @@ function extractData() {
     .then(text => {
         const extractedText = text.replace('Hidden Data: ', '');
         resultSection.innerHTML = `
-            <p class="text-lg font-semibold text-gray-800"> 
-                Your super secret extracted text from the definitely not troll image is <br> ${extractedText}
+            <p class="text-lg font-semibold text-green-500 font-orbitron"> 
+                Your super secret extracted text from the definitely not troll image is <br> 
+                <span class="text-green-400">${extractedText}</span>
             </p>
             <button 
                 onclick="resetToMainPage()"
-                class="mt-4 w-full py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300"
+                class="mt-4 w-full py-3 text-white bg-cyan-600 rounded-lg hover:bg-cyan-700 transition duration-300 font-orbitron"
             >
                 Back to Main Page
             </button>
