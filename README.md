@@ -1,3 +1,4 @@
+
 # Steganography
 
 Steganography is the technique of hiding secret data within digital media like images, audio, or text to ensure covert communication
@@ -34,4 +35,3 @@ python ui.py
 ### Encoded Image Example 
 
 ![Alt text](ProjectDemo/encodedImageInFolder.png)
-
